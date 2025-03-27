@@ -16,9 +16,9 @@
 
 /* Logo Image (Resize it and align) */
 .logo-image {
-    width: 30px;  /* Adjust the width of the logo */
-    height: auto; /* Keep the aspect ratio intact */
-    margin-right: 10px;  /* Space between logo and text */
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 /* TeaCast Name Styling */
