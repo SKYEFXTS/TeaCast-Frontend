@@ -1,0 +1,76 @@
+/* Header styles */
+.header {
+    background-color: #006D5B;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Left section for logo and TeaCast name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Image (Resize it and align) */
+.logo-image {
+    width: 30px;  /* Adjust the width of the logo */
+    height: auto; /* Keep the aspect ratio intact */
+    margin-right: 10px;  /* Space between logo and text */
+}
+
+/* TeaCast Name Styling */
+.tea-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    text-decoration: none;  /* Remove the underline */
+}
+
+/* Navigation links styles */
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.header .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}

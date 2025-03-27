@@ -19,3 +19,12 @@ export const getPrediction = async () => {
         throw error;
     }
 };
+
+export const getTeaAuctionPrices = async () => {
+    try {
+        const response = await axios.get(`${apiUrl}/data/tea-auction-price`);
+        return response.data.average_prices;
+    } catch (error) {
+        throw error;
+    }
+};

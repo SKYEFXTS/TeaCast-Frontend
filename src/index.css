@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Apply Roboto font to the entire app */
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700; /* Bold font for headers */
+}
+
+p {
+  font-weight: 400; /* Regular weight for paragraph text */
+}
+
+button {
+  font-weight: 500; /* Medium weight for buttons */
+}
+
