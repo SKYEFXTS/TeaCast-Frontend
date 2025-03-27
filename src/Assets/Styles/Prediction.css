@@ -1,0 +1,178 @@
+.prediction-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.prediction-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.prediction-content h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.prediction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-title h2 {
+    color: #006D5B;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.chart-title .tea-grade {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.chart-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    margin-top: -1rem; /* Adjust space between title and chart */
+}
+
+/* Table Styles */
+.table-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-card h2 {
+    color: #006D5B;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.table-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-right: -0.5rem;
+    padding-right: 0.5rem;
+}
+
+.prediction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.prediction-table th,
+.prediction-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.prediction-table th {
+    background-color: #f8f9fa;
+    color: #006D5B;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.prediction-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.loading {
+    color: #006D5B;
+    font-size: 1.2rem;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .prediction-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .prediction-content {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+.chart-card,
+.table-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Graph Tooltip Customization */
+.recharts-tooltip-wrapper {
+    outline: none;
+}
+
+.recharts-default-tooltip {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 

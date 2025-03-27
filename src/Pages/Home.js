@@ -9,14 +9,32 @@ import { getTeaAuctionPrices } from '../API/API';
 
 function HomePage() {
     const [auctionData, setAuctionData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        getTeaAuctionPrices()
-            .then(data => {
-                console.log('Fetched data:', data);
-                setAuctionData(data);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        const fetchAuctionData = async () => {
+            try {
+                setLoading(true);
+                setError(null);
+                const data = await getTeaAuctionPrices();
+                
+                if (data && data.length > 0) {
+                    setAuctionData(data);
+                } else {
+                    setError('No auction data available');
+                    setAuctionData([]);
+                }
+            } catch (error) {
+                console.error("Error fetching tea auction data:", error);
+                setError('Failed to load auction data');
+                setAuctionData([]);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchAuctionData();
     }, []);
 
     return (
@@ -28,7 +46,10 @@ function HomePage() {
                         <h1>Welcome to TeaCast</h1>
                         <p>Discover the world of tea auctions, and let our predictions guide you in making informed decisions.
                             Dive into the rich history and future of tea trading with TeaCast.</p>
-                        <Link to="/predictions" className="cta-button">Go to Predictions</Link>
+                        <div className="button-group">
+                            <Link to="/analytics" className="cta-button">Go to Analytics</Link>
+                            <Link to="/predictions" className="cta-button">Go to Predictions</Link>
+                        </div>
                     </div>
                     <div className="hero-image">
                         <img src={teaIllustration} alt="Tea Illustration" />
@@ -37,7 +58,18 @@ function HomePage() {
 
                 <section className="auction-section">
                     <h2>Current Tea Auction Prices</h2>
-                    <TeaAuctionPrices auctionData={auctionData} />
+                    
+                    {loading ? (
+                        <div className="loading">Loading auction data...</div>
+                    ) : error ? (
+                        <div className="error-message">
+                            {error}
+                        </div>
+                    ) : auctionData.length > 0 ? (
+                        <TeaAuctionPrices auctionData={auctionData} />
+                    ) : (
+                        <div className="no-data">No auction data available.</div>
+                    )}
                 </section>
             </main>
             <Footer />
