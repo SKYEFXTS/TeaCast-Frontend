@@ -37,6 +37,7 @@ function Dashboard() {
     const [error, setError] = useState(null);
 
     // Priority tea categories in specific order for consistent display
+    // These categories are displayed in a 3x3 grid layout
     const priorityCategories = [
         'WESTERN MEDIUM', 'WESTERN HIGH', 'NUWARA ELIYAS',
         'UDAPUSSELLAWAS', 'LOW GROWNS', 'UVA MEDIUM',
@@ -46,6 +47,10 @@ function Dashboard() {
     /**
      * Fetches dashboard data when component mounts.
      * Retrieves tea prices, exchange rates, and other economic indicators.
+     * 
+     * @async
+     * @function fetchDashboardData
+     * @throws {Error} When API call fails
      */
     useEffect(() => {
         const fetchDashboardData = async () => {
@@ -123,7 +128,7 @@ function Dashboard() {
                 <h1>Tea Market Analytics Dashboard</h1>
 
                 <div className="main-grid">
-                    {/* Tea Price Trends Chart */}
+                    {/* Tea Price Trends Chart - Shows historical price data for Western High grade tea */}
                     <div className="main-chart">
                         <div className="chart-card">
                             <h2>
@@ -178,7 +183,7 @@ function Dashboard() {
                         </div>
                     </div>
 
-                    {/* Priority Tea Categories Grid */}
+                    {/* Priority Tea Categories Grid - 3x3 grid showing current prices for main tea grades */}
                     <div className="priority-grid">
                         {priorityCategories.map((category) => (
                             dashboardData?.all_average_price_data[category] && (
@@ -196,7 +201,7 @@ function Dashboard() {
                     </div>
                 </div>
 
-                {/* Other Tea Categories Section */}
+                {/* Other Tea Categories Section - Shows prices for additional tea grades */}
                 <section className="other-categories">
                     <h2>Other Tea Categories</h2>
                     <div className="other-tiles">
@@ -216,11 +221,11 @@ function Dashboard() {
                     </div>
                 </section>
 
-                {/* Economic Indicators Section */}
+                {/* Economic Indicators Section - Shows USD rate and crude oil prices */}
                 <section className="additional-charts">
                     <h2 className="section-header">Economic Indicators</h2>
                     
-                    {/* USD-LKR Exchange Rate Chart */}
+                    {/* USD-LKR Exchange Rate Chart - Shows currency exchange rate trends */}
                     <div className="chart-card">
                         <h2>USD-LKR Exchange Rate</h2>
                         <div className="chart-container">
@@ -264,7 +269,7 @@ function Dashboard() {
                         </div>
                     </div>
 
-                    {/* Crude Oil Price Chart */}
+                    {/* Crude Oil Price Chart - Shows global crude oil price trends */}
                     <div className="chart-card">
                         <h2>Crude Oil Price Trends</h2>
                         <div className="chart-container">

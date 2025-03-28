@@ -2,13 +2,32 @@
    TeaCast - Prediction Page Styles
    
    This stylesheet contains all styles for the prediction page component.
-   It includes layouts, charts, tables, and responsive design rules.
+   It includes styles for:
+   - Chart and table grid layout
+   - Interactive line chart customization
+   - Detailed predictions table
+   - Loading and error states
+   - Responsive design rules
+   
+   Color Palette:
+   - Primary: #006D5B (TeaCast Green)
+   - Text Dark: #333
+   - Text Light: #666
+   - Background: white
+   - Border: #e0e0e0
+   - Error: #dc3545
+   
    Author: TeaCast Development Team
    ========================================================================== */
 
 /* ==========================================================================
    Page Layout
    Main container and content area styling
+   
+   Uses flexbox for:
+   - Full height layout
+   - Centered content
+   - Responsive padding
    ========================================================================== */
 .prediction-page {
     min-height: 100vh;
@@ -33,6 +52,11 @@
 /* ==========================================================================
    Grid Layout
    Two-column grid layout for chart and table sections
+   
+   Features:
+   - Equal width columns
+   - Responsive gap
+   - Automatic height adjustment
    ========================================================================== */
 .prediction-grid {
     display: grid;
@@ -44,6 +68,11 @@
 /* ==========================================================================
    Chart Card Styles
    Styling for the chart container and its components
+   
+   Structure:
+   - Card container with shadow
+   - Title section with subtitle
+   - Chart area with flex centering
    ========================================================================== */
 .chart-card {
     background: white;
@@ -55,7 +84,7 @@
     flex-direction: column;
 }
 
-/* Chart title section styling */
+/* Chart title section with flex layout */
 .chart-title {
     margin-bottom: 1rem;
     text-align: center;
@@ -72,7 +101,7 @@
     line-height: 1.2;
 }
 
-/* Tea grade subtitle styling */
+/* Tea grade subtitle with distinct styling */
 .chart-title .tea-grade {
     font-size: 1.1rem;
     color: #666;
@@ -80,7 +109,7 @@
     line-height: 1;
 }
 
-/* Chart container with flex layout for centering */
+/* Chart container with flex centering */
 .chart-container {
     flex: 1;
     display: flex;
@@ -93,6 +122,11 @@
 /* ==========================================================================
    Chart Customization
    Recharts library specific customizations
+   
+   Includes:
+   - Wrapper sizing
+   - Axis label styling
+   - Label positioning
    ========================================================================== */
 .recharts-wrapper {
     width: 100% !important;
@@ -101,7 +135,7 @@
     max-height: 100%;
 }
 
-/* Axis label styling */
+/* Axis label text styling */
 .recharts-text.recharts-label {
     fill: #666;
     font-size: 0.85rem;
@@ -121,6 +155,12 @@
 /* ==========================================================================
    Table Styles
    Styling for the predictions table
+   
+   Features:
+   - Scrollable container
+   - Sticky header
+   - Hover effects
+   - Clean borders
    ========================================================================== */
 .table-card {
     background: white;
@@ -139,7 +179,7 @@
     text-align: center;
 }
 
-/* Scrollable table container */
+/* Scrollable container with padding compensation */
 .table-container {
     flex: 1;
     overflow-y: auto;
@@ -147,14 +187,14 @@
     padding-right: 0.5rem;
 }
 
-/* Table layout and styling */
+/* Clean table layout */
 .prediction-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0.5rem;
 }
 
-/* Table cell styling */
+/* Consistent cell padding and borders */
 .prediction-table th,
 .prediction-table td {
     padding: 0.75rem;
@@ -162,7 +202,7 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Sticky header styling */
+/* Sticky header with distinct styling */
 .prediction-table th {
     background-color: #f8f9fa;
     color: #006D5B;
@@ -171,7 +211,7 @@
     top: 0;
 }
 
-/* Row hover effect */
+/* Interactive row hover effect */
 .prediction-table tr:hover {
     background-color: #f8f9fa;
 }
@@ -179,6 +219,11 @@
 /* ==========================================================================
    Loading and Error States
    Styles for loading and error message displays
+   
+   Features:
+   - Centered content
+   - Consistent spacing
+   - Distinct colors
    ========================================================================== */
 .loading-container,
 .error-container {
@@ -202,24 +247,35 @@
 /* ==========================================================================
    Responsive Design
    Media queries for different screen sizes
+   
+   Breakpoints:
+   - 1200px: Stack grid vertically
+   - 768px: Adjust spacing and font sizes
    ========================================================================== */
 @media (max-width: 1200px) {
-    /* Stack chart and table vertically on smaller screens */
     .prediction-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* Adjust padding for mobile devices */
     .prediction-content {
         padding: 1rem;
+    }
+
+    .chart-title h2 {
+        font-size: 1.4rem;
+    }
+
+    .chart-title .tea-grade {
+        font-size: 0.9rem;
     }
 }
 
 /* ==========================================================================
    Animations
-   Fade-in animation for cards
+   Smooth transitions and loading effects
    ========================================================================== */
 .chart-card,
 .table-card {
@@ -238,7 +294,7 @@
 }
 
 /* ==========================================================================
-   Graph Tooltip Customization
+   Tooltip Customization
    Styling for chart tooltips
    ========================================================================== */
 .recharts-tooltip-wrapper {
@@ -246,6 +302,7 @@
 }
 
 .recharts-default-tooltip {
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white !important;
+    border: 1px solid #006D5B !important;
+    border-radius: 4px;
 } 

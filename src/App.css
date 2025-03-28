@@ -1,22 +1,76 @@
-/* Main container for the app */
+/* ==========================================================================
+   TeaCast - App Component Styles
+   
+   This stylesheet contains the main application styles including:
+   - App container layout
+   - Logo and header styling
+   - Animation effects
+   - Link styling
+   - Responsive design rules
+   
+   Color Palette:
+   - Primary: #282c34 (Dark Blue)
+   - Accent: #61dafb (Light Blue)
+   - Text: white
+   
+   Typography:
+   - Font Size: calc(10px + 2vmin)
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Main Container
+   Base layout and alignment for the app
+   
+   Features:
+   - Centered text alignment
+   - Full viewport height
+   - Flexbox layout
+   ========================================================================== */
 .App {
   text-align: center;
 }
 
-/* Logo styling */
+/* ==========================================================================
+   Logo Styling
+   App logo dimensions and behavior
+   
+   Features:
+   - Responsive height (40% of viewport)
+   - Disabled pointer events
+   - Smooth animation
+   ========================================================================== */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-/* Animation for the logo */
+/* ==========================================================================
+   Logo Animation
+   Spin animation for the logo when reduced motion is not preferred
+   
+   Features:
+   - 20-second linear rotation
+   - Infinite loop
+   - Respects user's motion preferences
+   ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-/* Header styling */
+/* ==========================================================================
+   Header Styling
+   Main header container with flex layout
+   
+   Features:
+   - Dark background
+   - Full viewport height
+   - Centered content
+   - Responsive font sizing
+   ========================================================================== */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,12 +82,26 @@
   color: white;
 }
 
-/* Link styling */
+/* ==========================================================================
+   Link Styling
+   App link appearance and color
+   
+   Features:
+   - Light blue accent color
+   - Consistent with brand colors
+   ========================================================================== */
 .App-link {
   color: #61dafb;
 }
 
-/* Keyframes for logo spin animation */
+/* ==========================================================================
+   Animations
+   Keyframe definitions for logo spin animation
+   
+   Features:
+   - 360-degree rotation
+   - Smooth linear timing
+   ========================================================================== */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

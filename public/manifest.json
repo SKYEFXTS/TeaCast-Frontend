@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TeaCast",
+  "name": "TeaCast - Tea Price Prediction",
+  "description": "AI-powered tea price prediction and analytics platform for Sri Lankan tea industry",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,20 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#006D5B",
+  "background_color": "#f4f4f9",
+  "orientation": "portrait",
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "TeaCast Dashboard"
+    }
+  ]
 }

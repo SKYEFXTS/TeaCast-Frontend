@@ -1,10 +1,28 @@
+/**
+ * @fileoverview TeaCast About Page Component
+ * 
+ * This component serves as the About page for TeaCast, providing detailed information about
+ * the project, its technologies, workflow, and future plans. It includes sections for:
+ * - Project overview
+ * - Core technologies used
+ * - How TeaCast works
+ * - Future development plans
+ * - Contact information
+ * 
+ * @module About
+ * @requires react
+ * @requires ../Components/Header
+ * @requires ../Components/Footer
+ * @requires ../Assets/Styles/About.css
+ */
+
 import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../Assets/Styles/About.css';
 import teacastLogo from '../Assets/Images/TeaCast Logo.png';
 
-// Import technology logos
+// Technology logo imports
 import pythonLogo from '../Assets/Images/Logos/Python.png';
 import flaskLogo from '../Assets/Images/Logos/Flask.png';
 import reactLogo from '../Assets/Images/Logos/React.png';
@@ -18,9 +36,14 @@ import githubLogo from '../Assets/Images/Logos/Github.png';
 import linkedinLogo from '../Assets/Images/Logos/LinkedIn.png';
 
 /**
- * About page component that provides information about the TeaCast project.
+ * About page component that provides comprehensive information about the TeaCast project.
+ * Includes sections for project overview, technologies, workflow, and contact information.
+ * 
+ * @component
+ * @returns {JSX.Element} The complete About page
  */
 function About() {
+    // Technology stack configuration with descriptions
     const technologies = [
         {
             name: 'Python',
@@ -69,6 +92,7 @@ function About() {
         }
     ];
 
+    // Workflow steps configuration
     const workflowSteps = [
         {
             title: 'Data Collection',
@@ -88,6 +112,7 @@ function About() {
         }
     ];
 
+    // Future development plans configuration
     const futurePlans = [
         {
             title: 'Better Machine Learning Models',
@@ -107,14 +132,14 @@ function About() {
         <div className="about-page">
             <Header />
             <main className="about-content">
-                {/* Header Section */}
+                {/* Page Header Section */}
                 <section className="about-header">
                     <img src={teacastLogo} alt="TeaCast Logo" className="content-logo" />
-                    <h1>About TeaCast</h1>
+                    <h1>TeaCast</h1>
                     <h2>Project Overview & Core Technologies</h2>
                 </section>
 
-                {/* Introduction Section */}
+                {/* Project Introduction Section */}
                 <section className="introduction">
                     <h2>What is TeaCast?</h2>
                     <p>
@@ -127,7 +152,7 @@ function About() {
                     </p>
                 </section>
 
-                {/* Core Technologies Section */}
+                {/* Technologies Grid Section */}
                 <section className="technologies">
                     <h2>Core Technologies Used</h2>
                     <div className="tech-grid">
@@ -141,7 +166,7 @@ function About() {
                     </div>
                 </section>
 
-                {/* How It Works Section */}
+                {/* Project Workflow Section */}
                 <section className="workflow">
                     <h2>How TeaCast Works</h2>
                     <div className="workflow-steps">
@@ -155,7 +180,7 @@ function About() {
                     </div>
                 </section>
 
-                {/* Future Plans Section */}
+                {/* Future Development Section */}
                 <section className="future-plans">
                     <h2>What's Next?</h2>
                     <div className="plans-grid">
@@ -168,14 +193,16 @@ function About() {
                     </div>
                 </section>
 
-                {/* Contact Information Section */}
+                {/* Contact and Links Section */}
                 <section className="contact">
                     <h2>Contact Us</h2>
                     <div className="contact-info">
+                        {/* Email Contact */}
                         <div className="contact-item">
                             <i className="fas fa-envelope"></i>
                             <a href="mailto:oshan.20191284@iit.ac.lk">oshan.20191284@iit.ac.lk</a>
                         </div>
+                        {/* Repository Links */}
                         <div className="contact-item">
                             <h3>GitHub Repositories</h3>
                             <div className="repo-links">
@@ -187,6 +214,7 @@ function About() {
                                 </a>
                             </div>
                         </div>
+                        {/* Social Media Links */}
                         <div className="social-links">
                             <a href="https://github.com/SKYEFXTS" target="_blank" rel="noopener noreferrer">
                                 <img src={githubLogo} alt="GitHub" />

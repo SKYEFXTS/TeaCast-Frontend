@@ -5,6 +5,12 @@
  * and a detailed table. It fetches prediction data from the API and handles various
  * states including loading and error conditions.
  * 
+ * Features:
+ * - Interactive line chart with dynamic Y-axis scaling
+ * - Detailed predictions table with auction numbers
+ * - Loading and error state handling
+ * - Responsive design for various screen sizes
+ * 
  * @module Prediction
  * @requires react
  * @requires recharts
@@ -36,7 +42,13 @@ function Prediction() {
     const [error, setError] = useState(null);
     const [yAxisRange, setYAxisRange] = useState({ min: 0, max: 2000 });
 
-    // Function to calculate Y-axis range based on data
+    /**
+     * Calculates the Y-axis range based on prediction data.
+     * Rounds to nearest thousand for clean axis labels.
+     * 
+     * @param {Array} data - Array of prediction data points
+     * @returns {Object} Object containing min and max Y-axis values
+     */
     const calculateYAxisRange = (data) => {
         if (!data || data.length === 0) return { min: 0, max: 2000 };
 
@@ -56,6 +68,10 @@ function Prediction() {
      * Fetches prediction data when component mounts.
      * Handles data validation, loading states, and error cases.
      * Updates component state based on API response.
+     * 
+     * @async
+     * @function fetchPredictionData
+     * @throws {Error} When API call fails or data format is invalid
      */
     useEffect(() => {
         const fetchPredictionData = async () => {
@@ -125,14 +141,14 @@ function Prediction() {
                 <h1>Tea Price Predictions</h1>
                 
                 <div className="prediction-grid">
-                    {/* Chart Section */}
+                    {/* Chart Section - Displays prediction trend line */}
                     <div className="chart-card">
                         <div className="chart-title">
                             <h2>Price Prediction Trend</h2>
                             <span className="tea-grade">(Western High - BOPF/BOPFSp)</span>
                         </div>
                         <div className="chart-container">
-                            {/* Responsive chart container */}
+                            {/* Responsive chart container with fixed height */}
                             <ResponsiveContainer width="100%" height={450}>
                                 <LineChart 
                                     data={predictionData}
@@ -141,7 +157,7 @@ function Prediction() {
                                     {/* Grid lines for better readability */}
                                     <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                                     
-                                    {/* X-axis configuration */}
+                                    {/* X-axis configuration - Auction numbers */}
                                     <XAxis 
                                         dataKey="Auction_Number"
                                         tickFormatter={(value) => value}
@@ -153,7 +169,7 @@ function Prediction() {
                                         }}
                                     />
                                     
-                                    {/* Y-axis configuration */}
+                                    {/* Y-axis configuration - Dynamic range */}
                                     <YAxis 
                                         domain={[yAxisRange.min, yAxisRange.max]}
                                         label={{ 
@@ -164,13 +180,13 @@ function Prediction() {
                                         }}
                                     />
                                     
-                                    {/* Interactive tooltip configuration */}
+                                    {/* Interactive tooltip with custom formatting */}
                                     <Tooltip 
                                         labelFormatter={(value) => `Auction ${value}`}
                                         contentStyle={{ backgroundColor: '#fff', border: '1px solid #006D5B' }}
                                     />
                                     
-                                    {/* Price prediction line plot */}
+                                    {/* Price prediction line with custom styling */}
                                     <Line 
                                         type="monotone" 
                                         dataKey="Final_Prediction" 
@@ -184,7 +200,7 @@ function Prediction() {
                         </div>
                     </div>
 
-                    {/* Table Section - Detailed Predictions */}
+                    {/* Table Section - Detailed predictions with scrollable container */}
                     <div className="table-card">
                         <h2>Detailed Predictions</h2>
                         <div className="table-container">
@@ -196,11 +212,11 @@ function Prediction() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* Map prediction data to table rows */}
+                                    {/* Map prediction data to table rows with formatting */}
                                     {predictionData && predictionData.map((prediction, index) => (
                                         <tr key={index}>
                                             <td>{prediction.Auction_Number}</td>
-                                            <td>LKR {prediction.Final_Prediction.toFixed(2)}</td>
+                                            <td>{prediction.Final_Prediction.toFixed(2)}</td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -3,6 +3,14 @@
    
    This stylesheet contains all styles for the analytics dashboard component.
    It includes layouts for charts, price tiles, and economic indicators.
+   
+   Color Palette:
+   - Primary: #006D5B (TeaCast Green)
+   - Text Dark: #333
+   - Text Light: #666
+   - Background: white
+   - Shadow: rgba(0, 0, 0, 0.1)
+   
    Author: TeaCast Development Team
    ========================================================================== */
 
@@ -58,6 +66,11 @@
 /* ==========================================================================
    Chart Cards
    Styling for all chart containers
+   
+   Note: Chart cards use flexbox for vertical layout:
+   - Title at top
+   - Chart filling remaining space
+   - Consistent padding for alignment
    ========================================================================== */
 .chart-card {
     background: white;
@@ -103,6 +116,11 @@
 /* ==========================================================================
    Price Tiles
    Styling for tea category price displays
+   
+   Note: Price tiles use CSS Grid for:
+   - 3x3 layout in priority grid
+   - Auto-fill layout in other categories
+   - Consistent sizing and spacing
    ========================================================================== */
 .price-tile {
     background: white;
@@ -216,6 +234,11 @@
 /* ==========================================================================
    Responsive Design
    Media queries for different screen sizes
+   
+   Breakpoints:
+   - 1200px: Stack main grid vertically
+   - 768px: Adjust to 2-column priority grid
+   - 480px: Single column priority grid
    ========================================================================== */
 @media (max-width: 1200px) {
     /* Stack main chart and priority grid vertically */
@@ -253,7 +276,15 @@
     }
 }
 
-/* Chart Customization */
+/* ==========================================================================
+   Chart Customization
+   Custom styles for Recharts components and tooltips
+   
+   Note: Important overrides for Recharts:
+   - Wrapper dimensions for responsive sizing
+   - Label positioning and styling
+   - Tooltip customization
+   ========================================================================== */
 .recharts-tooltip-wrapper {
     outline: none;
 }
@@ -284,6 +315,15 @@
     transform: translateY(5px);
 }
 
+/* ==========================================================================
+   Animations
+   Smooth transitions and fade effects
+   
+   Note: Uses CSS animations for:
+   - Fade in effect on load
+   - Smooth hover transitions
+   - Transform animations
+   ========================================================================== */
 /* Smooth Animations */
 .chart-card,
 .price-tile {
