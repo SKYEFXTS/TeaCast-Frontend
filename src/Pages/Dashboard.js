@@ -5,6 +5,9 @@ import Footer from '../Components/Footer';
 import { getDashboardData } from '../API/API';
 import '../Assets/Styles/Dashboard.css';
 
+/**
+ * Dashboard page component that displays graphs of tea prices, USD rates, and crude oil prices over the past year.
+ */
 function Dashboard() {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(true);

@@ -5,6 +5,9 @@ import Footer from '../Components/Footer';
 import { getPrediction } from '../API/API';
 import '../Assets/Styles/Prediction.css';
 
+/**
+ * Prediction page component that displays tea price predictions.
+ */
 function Prediction() {
     const [predictionData, setPredictionData] = useState(null);
     const [loading, setLoading] = useState(true);

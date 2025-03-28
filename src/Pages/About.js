@@ -15,6 +15,9 @@ import kerasLogo from '../Assets/Images/Logos/Keras.png';
 import githubLogo from '../Assets/Images/Logos/Github.png';
 import linkedinLogo from '../Assets/Images/Logos/LinkedIn.png';
 
+/**
+ * About page component that provides information about the TeaCast project.
+ */
 function About() {
     const technologies = [
         {

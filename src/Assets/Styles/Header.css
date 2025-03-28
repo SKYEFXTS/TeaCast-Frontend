@@ -1,4 +1,4 @@
-/* Header styles */
+/* Header container */
 .header {
     background-color: #006D5B;
     padding: 1rem 2rem;
@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-/* Logo Image (Resize it and align) */
+/* Logo Image */
 .logo-image {
     width: 30px;
     height: 30px;

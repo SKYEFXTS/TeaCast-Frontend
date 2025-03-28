@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Assets/Styles/Footer.css';
 
+/**
+ * Footer component that contains the footer content.
+ */
 function Footer() {
     return (
         <div className="footer">
