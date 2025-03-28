@@ -34,6 +34,23 @@ function Prediction() {
     const [predictionData, setPredictionData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [yAxisRange, setYAxisRange] = useState({ min: 0, max: 2000 });
+
+    // Function to calculate Y-axis range based on data
+    const calculateYAxisRange = (data) => {
+        if (!data || data.length === 0) return { min: 0, max: 2000 };
+
+        const values = data.map(item => item.Final_Prediction);
+        const minValue = Math.min(...values);
+        const maxValue = Math.max(...values);
+
+        // Find the nearest lower 1000 for minimum
+        const minRange = Math.floor(minValue / 1000) * 1000;
+        // Find the nearest upper 1000 for maximum
+        const maxRange = Math.ceil(maxValue / 1000) * 1000;
+
+        return { min: minRange, max: maxRange };
+    };
 
     /**
      * Fetches prediction data when component mounts.
@@ -49,6 +66,8 @@ function Prediction() {
                 // Validate that we received an array of predictions
                 if (Array.isArray(data)) {
                     setPredictionData(data);
+                    // Calculate and set Y-axis range when data is received
+                    setYAxisRange(calculateYAxisRange(data));
                 } else {
                     throw new Error('Invalid prediction data format');
                 }
@@ -136,6 +155,7 @@ function Prediction() {
                                     
                                     {/* Y-axis configuration */}
                                     <YAxis 
+                                        domain={[yAxisRange.min, yAxisRange.max]}
                                         label={{ 
                                             value: 'Price (LKR)',
                                             angle: -90,
