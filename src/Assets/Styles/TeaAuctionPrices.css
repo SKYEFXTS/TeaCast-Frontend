@@ -1,11 +1,43 @@
-/* General Reset */
+/* ==========================================================================
+   TeaCast - Tea Auction Prices Component Styles
+   
+   This stylesheet contains all styles for the TeaAuctionPrices component.
+   It includes styles for:
+   - General reset and base styles
+   - Navigation bar
+   - Main content layout
+   - Auction grid and cards
+   - Button styling
+   - Footer design
+   - Responsive breakpoints
+   
+   Color Palette:
+   - Primary: #00796b (Tea Green)
+   - Text: #333 (Dark Gray)
+   - Background: #f4f4f9 (Light Gray)
+   - Accent: #ffe082 (Light Yellow)
+   
+   Typography:
+   - Font Family: 'Roboto', sans-serif
+   - Font Sizes: 14px (footer), 16px (nav), 24px (h1), 32px (h2)
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   General Reset
+   Base styles to normalize browser defaults
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
+/* ==========================================================================
+   Body Styling
+   Base styles for the entire page
+   ========================================================================== */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;
@@ -14,7 +46,11 @@ body {
     padding: 0;
 }
 
-/* Navbar Styling */
+/* ==========================================================================
+   Navigation Bar
+   Top navigation bar styling
+   ========================================================================== */
+/* Main navbar container */
 .navbar {
     background-color: #00796b;
     padding: 15px;
@@ -23,6 +59,7 @@ body {
     align-items: center;
 }
 
+/* Navbar title */
 .navbar h1 {
     color: white;
     font-size: 24px;
@@ -30,6 +67,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Navbar links */
 .navbar a {
     color: white;
     font-size: 16px;
@@ -37,29 +75,40 @@ body {
     margin: 0 15px;
 }
 
+/* Navbar link hover effect */
 .navbar a:hover {
     color: #ffe082;
 }
 
-/* Main Content */
+/* ==========================================================================
+   Main Content
+   Primary content area styling
+   ========================================================================== */
+/* Main content container */
 .main-content {
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Section headings */
 h2 {
     font-size: 32px;
     color: #00796b;
     margin-bottom: 30px;
 }
 
-/* Tea Auction Prices Section */
+/* ==========================================================================
+   Tea Auction Prices Section
+   Grid layout and card styling for auction items
+   ========================================================================== */
+/* Grid container for auction items */
 .auction-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
+/* Individual auction card */
 .auction-card {
     background-color: white;
     padding: 1.5rem;
@@ -67,19 +116,25 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Card title */
 .auction-card h3 {
     color: #333;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
+/* Card details text */
 .auction-details p {
     color: #666;
     margin: 0.5rem 0;
     font-size: 1rem;
 }
 
-/* Button Styling */
+/* ==========================================================================
+   Button Styling
+   Interactive button elements
+   ========================================================================== */
+/* Base button styles */
 button {
     background-color: #00796b;
     color: white;
@@ -91,15 +146,21 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Button hover state */
 button:hover {
     background-color: #004d40;
 }
 
+/* Button focus state */
 button:focus {
     outline: none;
 }
 
-/* Footer Styling */
+/* ==========================================================================
+   Footer Styling
+   Bottom section of the page
+   ========================================================================== */
+/* Main footer container */
 footer {
     background-color: #00796b;
     color: white;
@@ -108,20 +169,27 @@ footer {
     margin-top: 50px;
 }
 
+/* Footer paragraph text */
 footer p {
     font-size: 14px;
 }
 
+/* Footer links */
 footer a {
     color: white;
     text-decoration: none;
 }
 
+/* Footer link hover effect */
 footer a:hover {
     color: #ffe082;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   Responsive Design
+   Media queries for different screen sizes
+   ========================================================================== */
+/* Tablet and smaller screens */
 @media (max-width: 768px) {
     .auction-grid {
         grid-template-columns: 1fr;

@@ -1,3 +1,28 @@
+/* ==========================================================================
+   TeaCast - Home Page Styles
+   
+   This stylesheet contains all styles for the TeaCast home page component.
+   It includes styles for:
+   - Hero section with welcome message
+   - CTA buttons and navigation
+   - Tea auction prices display
+   - Loading and error states
+   - Responsive design rules
+   
+   Color Palette:
+   - Primary Green: #2C6B3C
+   - Dark Text: #333
+   - Light Text: #666
+   - CTA Button: #000
+   - Error: #dc3545
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Layout
+   Main container and content area styling
+   ========================================================================== */
 .home-page {
     min-height: 100vh;
     display: flex;
@@ -12,6 +37,10 @@
     width: 100%;
 }
 
+/* ==========================================================================
+   Hero Section
+   Two-column grid layout with text and illustration
+   ========================================================================== */
 .hero-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,6 +50,7 @@
     margin-bottom: 1rem;
 }
 
+/* Hero Text Content */
 .hero-text {
     text-align: center;
 }
@@ -38,6 +68,7 @@
     margin-bottom: 2rem;
 }
 
+/* Call-to-Action Buttons */
 .cta-button {
     display: inline-block;
     background-color: #000;
@@ -53,12 +84,17 @@
     background-color: #333;
 }
 
+/* Hero Image */
 .hero-image img {
     width: 100%;
     max-width: 480px;
     height: auto;
 }
 
+/* ==========================================================================
+   Auction Section
+   Tea auction prices display area
+   ========================================================================== */
 .auction-section {
     margin-top: -5rem;
     margin-bottom: -2rem;
@@ -72,6 +108,7 @@
     text-align: center;
 }
 
+/* Button Group Layout */
 .button-group {
     display: flex;
     gap: 1rem;
@@ -79,7 +116,10 @@
     justify-content: center;
 }
 
-/* Loading and Error States */
+/* ==========================================================================
+   Loading and Error States
+   Feedback states for data loading and errors
+   ========================================================================== */
 .loading {
     text-align: center;
     padding: 2rem;
@@ -98,65 +138,91 @@
     color: #666;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   Responsive Design
+   Media queries for different screen sizes
+   
+   Breakpoints:
+   - 1024px: Stack hero section vertically
+   - 768px: Adjust spacing and font sizes
+   ========================================================================== */
 @media (max-width: 1024px) {
+    /* Stack hero content vertically */
     .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
     }
 
+    /* Move image above text on mobile */
     .hero-image {
         order: -1;
     }
 
+    /* Adjust image size for smaller screens */
     .hero-image img {
         max-width: 360px;
     }
 
+    /* Center buttons */
     .button-group {
         justify-content: center;
     }
 }
 
 @media (max-width: 768px) {
+    /* Adjust content padding */
     .main-content {
         padding: 1rem;
     }
 
+    /* Reduce heading size */
     .hero-text h1 {
         font-size: 2rem;
     }
 
+    /* Adjust paragraph text */
     .hero-text p {
         font-size: 1rem;
     }
 
+    /* Adjust section spacing */
     .auction-section {
         padding: 1rem;
     }
 }
 
+/* ==========================================================================
+   Welcome Section
+   Legacy styles for welcome message
+   ========================================================================== */
 .welcome-section {
     text-align: center;
     margin: 30px 0;
 }
 
+/* ==========================================================================
+   Auction Prices Display
+   Grid layout for auction price items
+   ========================================================================== */
 .auction-prices-section {
     text-align: center;
     margin-top: 50px;
 }
 
+/* Heading styles */
 h1, h2 {
     color: #2C6B3C;
 }
 
+/* Auction prices grid */
 .auction-prices {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
 }
 
+/* Individual auction item card */
 .auction-item {
     padding: 20px;
     border: 1px solid #ddd;
@@ -168,6 +234,7 @@ h1, h2 {
     color: #2C6B3C;
 }
 
+/* Action button styles */
 .button {
     background-color: #2C6B3C;
     color: white;
@@ -181,7 +248,10 @@ h1, h2 {
     background-color: #1d4e2a;
 }
 
-/* API Status indicators for development */
+/* ==========================================================================
+   API Status Indicators
+   Visual feedback for API request states
+   ========================================================================== */
 .api-status {
     padding: 10px 15px;
     margin-bottom: 15px;
@@ -192,6 +262,7 @@ h1, h2 {
     font-size: 0.9rem;
 }
 
+/* Loading state */
 .api-status.pending,
 .api-status.loading {
     background-color: #e0f2f7;

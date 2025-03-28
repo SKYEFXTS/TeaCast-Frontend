@@ -1,12 +1,124 @@
+/* ==========================================================================
+   TeaCast - Button Component Styles
+   
+   This stylesheet contains all styles for the Button component.
+   It includes styles for:
+   - Base button styling
+   - Type variants (primary/secondary)
+   - Interactive states (hover, focus, disabled)
+   - Loading animation
+   - Responsive design
+   
+   Color Palette:
+   - Primary: #006D5B (TeaCast Green)
+   - Secondary: #ffffff (White)
+   - Text: #ffffff (White)
+   - Border: #006D5B (TeaCast Green)
+   - Disabled: #cccccc (Gray)
+   
+   Typography:
+   - Font Family: 'Poppins', sans-serif
+   - Font Size: 16px
+   - Font Weight: 500 (Medium)
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Base Button Styles
+   Common styles for all button variants
+   ========================================================================== */
+/* Main button container */
 .button {
-    background-color: #2C6B3C;
-    color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
-.button:hover {
-    background-color: #1d4e2a;
+/* ==========================================================================
+   Button Variants
+   Styles for different button types
+   ========================================================================== */
+/* Primary button */
+.primary {
+    background-color: #006D5B;
+    color: white;
+}
+
+/* Secondary button */
+.secondary {
+    background-color: white;
+    color: #006D5B;
+    border: 2px solid #006D5B;
+}
+
+/* ==========================================================================
+   Interactive States
+   Styles for button interactions
+   ========================================================================== */
+/* Hover state */
+.button:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 109, 91, 0.2);
+}
+
+/* Disabled state */
+.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   Loading State
+   Styles for loading animation
+   ========================================================================== */
+/* Loading spinner container */
+.loading {
+    position: relative;
+    color: transparent;
+}
+
+/* Loading spinner animation */
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Spinner animation keyframes */
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   Responsive Design
+   Media queries for different screen sizes
+   ========================================================================== */
+/* Mobile devices */
+@media (max-width: 480px) {
+    .button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

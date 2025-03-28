@@ -1,6 +1,31 @@
+/* ==========================================================================
+   TeaCast - API Service Module
+   
+   This module handles all API interactions for the TeaCast application.
+   It includes:
+   - User authentication
+   - Prediction data fetching
+   - Tea auction price data
+   - Dashboard data retrieval
+   
+   Dependencies:
+   - Axios for HTTP requests
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
 import axios from 'axios';
 
+/* ==========================================================================
+   API Configuration
+   Base URL for all API endpoints
+   ========================================================================== */
 const apiUrl = 'http://127.0.0.1:5000';
+
+/* ==========================================================================
+   Authentication Functions
+   User login and authentication handling
+   ========================================================================== */
 
 /**
  * Logs in a user with the provided username and password.
@@ -16,6 +41,11 @@ export const loginUser = async (username, password) => {
         throw error;
     }
 };
+
+/* ==========================================================================
+   Data Fetching Functions
+   Core API interaction functions for various data types
+   ========================================================================== */
 
 /**
  * Fetches prediction data from the API.

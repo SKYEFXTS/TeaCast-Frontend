@@ -1,4 +1,28 @@
-/* Header container */
+/* ==========================================================================
+   TeaCast - Header Component Styles
+   
+   This stylesheet contains all styles for the TeaCast header component.
+   It includes styles for:
+   - Header container and layout
+   - Logo and branding
+   - Navigation menu
+   - Interactive states
+   
+   Color Palette:
+   - Primary: #006D5B (TeaCast Green)
+   - Text: white
+   
+   Typography:
+   - Font Family: 'Poppins', sans-serif (for branding)
+   - Font Weights: 500 (nav), 600 (branding)
+   
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Header Container
+   Main header bar with flex layout and background
+   ========================================================================== */
 .header {
     background-color: #006D5B;
     padding: 1rem 2rem;
@@ -8,20 +32,23 @@
     color: white;
 }
 
-/* Left section for logo and TeaCast name */
+/* ==========================================================================
+   Logo Section
+   Left section containing logo and brand name
+   ========================================================================== */
 .logo {
     display: flex;
     align-items: center;
 }
 
-/* Logo Image */
+/* Logo image sizing and spacing */
 .logo-image {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
 
-/* TeaCast Name Styling */
+/* Brand name typography */
 .tea-name {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -31,25 +58,36 @@
     text-decoration: none;  /* Remove the underline */
 }
 
-/* Navigation links styles */
+/* ==========================================================================
+   Navigation Menu
+   Right section with navigation links
+   ========================================================================== */
+/* Navigation list layout */
 nav ul {
     display: flex;
     list-style-type: none;
 }
 
+/* Navigation item spacing */
 nav ul li {
     margin: 0 15px;
 }
 
+/* Navigation link styling */
 nav ul li a {
     color: white;
     text-decoration: none;
 }
 
+/* Navigation link hover effect */
 nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* ==========================================================================
+   Logo Link Styling
+   Combined logo and text link appearance
+   ========================================================================== */
 .header .logo a {
     color: white;
     text-decoration: none;
@@ -60,17 +98,23 @@ nav ul li a:hover {
     gap: 0.5rem;
 }
 
+/* ==========================================================================
+   Navigation Container
+   Flex container for navigation items
+   ========================================================================== */
 .header nav {
     display: flex;
     gap: 2rem;
 }
 
+/* Navigation link base styles */
 .header nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
 }
 
+/* Navigation link hover interaction */
 .header nav a:hover {
     text-decoration: underline;
 }
