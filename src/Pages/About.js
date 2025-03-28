@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../Assets/Styles/About.css';
+import teacastLogo from '../Assets/Images/TeaCast Logo.png';
 
 // Import technology logos
 import flaskLogo from '../Assets/Images/Logos/Flask.png';
@@ -102,6 +103,7 @@ function About() {
             <main className="about-content">
                 {/* Header Section */}
                 <section className="about-header">
+                    <img src={teacastLogo} alt="TeaCast Logo" className="content-logo" />
                     <h1>About TeaCast</h1>
                     <h2>Project Overview & Core Technologies</h2>
                 </section>
