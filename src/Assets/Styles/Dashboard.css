@@ -1,3 +1,15 @@
+/* ==========================================================================
+   TeaCast - Dashboard Page Styles
+   
+   This stylesheet contains all styles for the analytics dashboard component.
+   It includes layouts for charts, price tiles, and economic indicators.
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Layout
+   Main container and content area styling
+   ========================================================================== */
 .dashboard-page {
     min-height: 100vh;
     display: flex;
@@ -18,7 +30,10 @@
     text-align: center;
 }
 
-/* Main Grid Layout */
+/* ==========================================================================
+   Main Grid Layout
+   Two-column grid for main chart and priority categories
+   ========================================================================== */
 .main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -30,6 +45,7 @@
     width: 100%;
 }
 
+/* Priority Categories Grid */
 .priority-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -39,14 +55,21 @@
     align-items: stretch;
 }
 
-/* Chart Cards */
+/* ==========================================================================
+   Chart Cards
+   Styling for all chart containers
+   ========================================================================== */
 .chart-card {
     background: white;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem 0.75rem 0.75rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
+/* Chart title styling */
 .chart-card h2 {
     color: #006D5B;
     margin-bottom: 1rem;
@@ -56,6 +79,7 @@
     gap: 0.5rem;
 }
 
+/* Tea grade subtitle */
 .tea-grade {
     font-size: 0.7rem;
     color: #666;
@@ -64,12 +88,22 @@
     align-self: center;
 }
 
+/* Chart container with flex layout */
 .chart-container {
-    height: 100%;
+    flex: 1;
     width: 100%;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 10rem 10rem -5rem -5rem;
 }
 
-/* Price Tiles */
+/* ==========================================================================
+   Price Tiles
+   Styling for tea category price displays
+   ========================================================================== */
 .price-tile {
     background: white;
     border-radius: 8px;
@@ -82,11 +116,13 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Hover effect for price tiles */
 .price-tile:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Category title */
 .price-tile h3 {
     color: #006D5B;
     font-size: 1rem;
@@ -95,10 +131,12 @@
     font-weight: 600;
 }
 
+/* Price information container */
 .price-info {
     text-align: center;
 }
 
+/* Price value styling */
 .price {
     font-size: 1.4rem;
     font-weight: bold;
@@ -107,13 +145,17 @@
     line-height: 1.2;
 }
 
+/* Date display styling */
 .date {
     font-size: 0.9rem;
     color: #666;
     margin-top: 0.25rem;
 }
 
-/* Other Categories Section */
+/* ==========================================================================
+   Other Categories Section
+   Styling for non-priority tea categories
+   ========================================================================== */
 .other-categories {
     margin-bottom: 2rem;
 }
@@ -129,7 +171,10 @@
     gap: 1rem;
 }
 
-/* Additional Charts Section */
+/* ==========================================================================
+   Economic Indicators Section
+   Layout for additional charts (USD rate and crude oil)
+   ========================================================================== */
 .additional-charts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -145,7 +190,10 @@
     text-align: left;
 }
 
-/* Loading and Error States */
+/* ==========================================================================
+   Loading and Error States
+   Styles for loading and error message displays
+   ========================================================================== */
 .loading-container,
 .error-container {
     display: flex;
@@ -165,32 +213,41 @@
     text-align: center;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   Responsive Design
+   Media queries for different screen sizes
+   ========================================================================== */
 @media (max-width: 1200px) {
+    /* Stack main chart and priority grid vertically */
     .main-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Maintain 3-column layout for priority grid */
     .priority-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Stack economic indicator charts vertically */
     .additional-charts {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    /* Adjust to 2-column layout for priority grid */
     .priority-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Reduce padding for smaller screens */
     .dashboard-content {
         padding: 1rem;
     }
 }
 
 @media (max-width: 480px) {
+    /* Single column layout for priority grid */
     .priority-grid {
         grid-template-columns: 1fr;
     }
@@ -204,6 +261,27 @@
 .recharts-default-tooltip {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.recharts-text.recharts-label {
+    fill: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.recharts-yaxis .recharts-label {
+    transform: translateX(-5px);
+}
+
+.recharts-xaxis .recharts-label {
+    transform: translateY(5px);
 }
 
 /* Smooth Animations */
