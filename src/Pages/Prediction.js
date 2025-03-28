@@ -114,7 +114,7 @@ function Prediction() {
                         </div>
                         <div className="chart-container">
                             {/* Responsive chart container */}
-                            <ResponsiveContainer width="100%" height={350}>
+                            <ResponsiveContainer width="100%" height={450}>
                                 <LineChart 
                                     data={predictionData}
                                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
