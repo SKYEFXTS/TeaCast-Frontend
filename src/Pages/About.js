@@ -5,6 +5,7 @@ import '../Assets/Styles/About.css';
 import teacastLogo from '../Assets/Images/TeaCast Logo.png';
 
 // Import technology logos
+import pythonLogo from '../Assets/Images/Logos/Python.png';
 import flaskLogo from '../Assets/Images/Logos/Flask.png';
 import reactLogo from '../Assets/Images/Logos/React.png';
 import pandasLogo from '../Assets/Images/Logos/Pandas.png';
@@ -21,6 +22,11 @@ import linkedinLogo from '../Assets/Images/Logos/LinkedIn.png';
  */
 function About() {
     const technologies = [
+        {
+            name: 'Python',
+            logo: pythonLogo,
+            description: 'The core programming language for developing TeaCast. Python is used for backend development, data processing, statistical modeling, and machine learning tasks. Its rich ecosystem of libraries, such as Pandas, NumPy, TensorFlow, and Keras, makes it the perfect choice for this project.'
+        },
         {
             name: 'Flask',
             logo: flaskLogo,
@@ -70,7 +76,7 @@ function About() {
         },
         {
             title: 'Data Analysis',
-            description: 'The data is analyzed and cleaned, and the time-series model (SARIMAX) is trained using Statsmodels.'
+            description: 'The data is analyzed and cleaned, and the time-series model (SARIMAX) is trained using Statsmodels to generate the base prediction.'
         },
         {
             title: 'Prediction',
