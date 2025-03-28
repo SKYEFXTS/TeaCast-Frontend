@@ -1,3 +1,15 @@
+/* ==========================================================================
+   TeaCast - Prediction Page Styles
+   
+   This stylesheet contains all styles for the prediction page component.
+   It includes layouts, charts, tables, and responsive design rules.
+   Author: TeaCast Development Team
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Layout
+   Main container and content area styling
+   ========================================================================== */
 .prediction-page {
     min-height: 100vh;
     display: flex;
@@ -18,25 +30,34 @@
     text-align: center;
 }
 
+/* ==========================================================================
+   Grid Layout
+   Two-column grid layout for chart and table sections
+   ========================================================================== */
 .prediction-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: -0.5rem;
 }
 
+/* ==========================================================================
+   Chart Card Styles
+   Styling for the chart container and its components
+   ========================================================================== */
 .chart-card {
     background: white;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+/* Chart title section styling */
 .chart-title {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -51,6 +72,7 @@
     line-height: 1.2;
 }
 
+/* Tea grade subtitle styling */
 .chart-title .tea-grade {
     font-size: 1.1rem;
     color: #666;
@@ -58,16 +80,48 @@
     line-height: 1;
 }
 
+/* Chart container with flex layout for centering */
 .chart-container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 350px;
-    margin-top: -1rem; /* Adjust space between title and chart */
+    min-height: 400px;
+    margin: -1rem 0;
 }
 
-/* Table Styles */
+/* ==========================================================================
+   Chart Customization
+   Recharts library specific customizations
+   ========================================================================== */
+.recharts-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Axis label styling */
+.recharts-text.recharts-label {
+    fill: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Y-axis label positioning */
+.recharts-yaxis .recharts-label {
+    transform: translateX(-25px);
+}
+
+/* X-axis label positioning */
+.recharts-xaxis .recharts-label {
+    transform: translateY(5px);
+}
+
+/* ==========================================================================
+   Table Styles
+   Styling for the predictions table
+   ========================================================================== */
 .table-card {
     background: white;
     border-radius: 10px;
@@ -85,6 +139,7 @@
     text-align: center;
 }
 
+/* Scrollable table container */
 .table-container {
     flex: 1;
     overflow-y: auto;
@@ -92,12 +147,14 @@
     padding-right: 0.5rem;
 }
 
+/* Table layout and styling */
 .prediction-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0.5rem;
 }
 
+/* Table cell styling */
 .prediction-table th,
 .prediction-table td {
     padding: 0.75rem;
@@ -105,6 +162,7 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Sticky header styling */
 .prediction-table th {
     background-color: #f8f9fa;
     color: #006D5B;
@@ -113,11 +171,15 @@
     top: 0;
 }
 
+/* Row hover effect */
 .prediction-table tr:hover {
     background-color: #f8f9fa;
 }
 
-/* Loading and Error States */
+/* ==========================================================================
+   Loading and Error States
+   Styles for loading and error message displays
+   ========================================================================== */
 .loading-container,
 .error-container {
     display: flex;
@@ -137,20 +199,28 @@
     text-align: center;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   Responsive Design
+   Media queries for different screen sizes
+   ========================================================================== */
 @media (max-width: 1200px) {
+    /* Stack chart and table vertically on smaller screens */
     .prediction-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    /* Adjust padding for mobile devices */
     .prediction-content {
         padding: 1rem;
     }
 }
 
-/* Animations */
+/* ==========================================================================
+   Animations
+   Fade-in animation for cards
+   ========================================================================== */
 .chart-card,
 .table-card {
     animation: fadeIn 0.5s ease-out;
@@ -167,7 +237,10 @@
     }
 }
 
-/* Graph Tooltip Customization */
+/* ==========================================================================
+   Graph Tooltip Customization
+   Styling for chart tooltips
+   ========================================================================== */
 .recharts-tooltip-wrapper {
     outline: none;
 }

@@ -1,11 +1,14 @@
 import React from 'react';
 import '../Assets/Styles/Footer.css';
 
+/**
+ * Footer component that contains the footer content.
+ */
 function Footer() {
     return (
         <div className="footer">
             <div>
-                Contact us: <a href="mailto:oshan.20191284@iit.ac.lk">oshan.20191284@iit.ac.lk</a>
+                Contact us: <a href="mailto:oshan.20191284@iit.ac.lk"> oshan.20191284@iit.ac.lk</a>
                 <span className="separator">|</span>
                 Phone: +94 776 006 687
                 <div className="footer-right">

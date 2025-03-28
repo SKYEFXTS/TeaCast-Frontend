@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+/**
+ * Login page component that handles user authentication.
+ */
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

@@ -6,6 +6,9 @@ import Dashboard from './Pages/Dashboard';
 import Prediction from './Pages/Prediction';
 import About from './Pages/About';
 
+/**
+ * Main App component that sets up routing for the application.
+ */
 function App() {
     return (
         <Router>

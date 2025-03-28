@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import '../Assets/Styles/Header.css';
 import teacastLogo from '../Assets/Images/TeaCast Logo.png';
 
+/**
+ * Header component that contains the navigation links and logo.
+ */
 function Header() {
     return (
         <header className="header">

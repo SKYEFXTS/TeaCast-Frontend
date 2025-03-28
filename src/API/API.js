@@ -2,6 +2,12 @@ import axios from 'axios';
 
 const apiUrl = 'http://127.0.0.1:5000';
 
+/**
+ * Logs in a user with the provided username and password.
+ * @param {string} username - The username of the user.
+ * @param {string} password - The password of the user.
+ * @returns {Promise<Object>} The response data from the login API.
+ */
 export const loginUser = async (username, password) => {
     try {
         const response = await axios.post(`${apiUrl}/login`, { username, password });
@@ -11,6 +17,10 @@ export const loginUser = async (username, password) => {
     }
 };
 
+/**
+ * Fetches prediction data from the API.
+ * @returns {Promise<Array>} The prediction data.
+ */
 export const getPrediction = async () => {
     try {
         console.log('Fetching predictions from:', `${apiUrl}/data/predict`);
@@ -29,6 +39,10 @@ export const getPrediction = async () => {
     }
 };
 
+/**
+ * Fetches tea auction prices from the API.
+ * @returns {Promise<Array>} The average tea auction prices.
+ */
 export const getTeaAuctionPrices = async () => {
     try {
         const response = await axios.get(`${apiUrl}/data/tea-auction-price`);
@@ -39,6 +53,10 @@ export const getTeaAuctionPrices = async () => {
     }
 };
 
+/**
+ * Fetches dashboard data from the API.
+ * @returns {Promise<Object>} The dashboard data.
+ */
 export const getDashboardData = async () => {
     try {
         console.log('Fetching dashboard data from:', `${apiUrl}/data/dashboard`);

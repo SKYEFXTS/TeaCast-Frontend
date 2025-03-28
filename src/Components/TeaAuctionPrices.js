@@ -1,6 +1,10 @@
 import React from 'react';
 import '../Assets/Styles/TeaAuctionPrices.css';
 
+/**
+ * TeaAuctionPrices component that displays the auction data in a grid format.
+ * @param {Array} auctionData - The array of auction data to display.
+ */
 function TeaAuctionPrices({ auctionData }) {
     return (
         <div className="auction-grid">

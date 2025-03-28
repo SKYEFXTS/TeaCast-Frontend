@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../Assets/Styles/About.css';
+import teacastLogo from '../Assets/Images/TeaCast Logo.png';
 
 // Import technology logos
+import pythonLogo from '../Assets/Images/Logos/Python.png';
 import flaskLogo from '../Assets/Images/Logos/Flask.png';
 import reactLogo from '../Assets/Images/Logos/React.png';
 import pandasLogo from '../Assets/Images/Logos/Pandas.png';
@@ -15,8 +17,16 @@ import kerasLogo from '../Assets/Images/Logos/Keras.png';
 import githubLogo from '../Assets/Images/Logos/Github.png';
 import linkedinLogo from '../Assets/Images/Logos/LinkedIn.png';
 
+/**
+ * About page component that provides information about the TeaCast project.
+ */
 function About() {
     const technologies = [
+        {
+            name: 'Python',
+            logo: pythonLogo,
+            description: 'The core programming language for developing TeaCast. Python is used for backend development, data processing, statistical modeling, and machine learning tasks. Its rich ecosystem of libraries, such as Pandas, NumPy, TensorFlow, and Keras, makes it the perfect choice for this project.'
+        },
         {
             name: 'Flask',
             logo: flaskLogo,
@@ -66,7 +76,7 @@ function About() {
         },
         {
             title: 'Data Analysis',
-            description: 'The data is analyzed and cleaned, and the time-series model (SARIMAX) is trained using Statsmodels.'
+            description: 'The data is analyzed and cleaned, and the time-series model (SARIMAX) is trained using Statsmodels to generate the base prediction.'
         },
         {
             title: 'Prediction',
@@ -99,6 +109,7 @@ function About() {
             <main className="about-content">
                 {/* Header Section */}
                 <section className="about-header">
+                    <img src={teacastLogo} alt="TeaCast Logo" className="content-logo" />
                     <h1>About TeaCast</h1>
                     <h2>Project Overview & Core Technologies</h2>
                 </section>

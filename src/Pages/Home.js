@@ -7,6 +7,9 @@ import '../Assets/Styles/Home.css';
 import teaIllustration from '../Assets/Images/TeaCast Illust 1 Low.png';
 import { getTeaAuctionPrices } from '../API/API';
 
+/**
+ * Home page component that displays the welcome message and current tea auction prices.
+ */
 function HomePage() {
     const [auctionData, setAuctionData] = useState([]);
     const [loading, setLoading] = useState(true);
