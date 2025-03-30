@@ -96,9 +96,7 @@ teacast/
 │   │   └── TeaAuctionPrices.js
 │   └── App.js
 └── package.json
-```
-
-## Contributing
+```## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -120,4 +118,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any queries or support, please contact:
 - Email: oshannr@gmail.com
-- Project Link: [https://github.com/SKYEFXTS/TeaCast-Frontend.git](https://github.com/SKYEFXTS/TeaCast-Frontend.git)
+- Project Link: [https://github.com/SKYEFXTS/TeaCast-Frontend](https://github.com/SKYEFXTS/TeaCast-Frontend)
+
+
