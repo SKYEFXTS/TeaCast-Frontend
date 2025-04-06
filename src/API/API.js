@@ -49,7 +49,7 @@ export const loginUser = async (username, password) => {
 
 /**
  * Fetches prediction data from the API.
- * @returns {Promise<Array>} The prediction data.
+ * @returns {Promise<Array|null>} The prediction data or null if no predictions.
  */
 export const getPrediction = async () => {
     try {
@@ -57,7 +57,11 @@ export const getPrediction = async () => {
         const response = await axios.get(`${apiUrl}/data/predict`);
         console.log('Prediction API Response:', response);
         
-        if (response.data && response.data.prediction) {
+        if (response.data && response.data.prediction !== undefined) {
+            // If prediction is null, return null (valid case with no data)
+            if (response.data.prediction === null) {
+                return null;
+            }
             return response.data.prediction;
         } else {
             console.warn('Unexpected API response structure:', response.data);

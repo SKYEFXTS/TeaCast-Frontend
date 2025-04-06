@@ -10,19 +10,24 @@
     "axios": "^1.8.4",
     "chart.js": "^4.4.1",
     "msw": "^2.2.14",
+    "node-fetch": "^2.6.7",
     "react": "^19.0.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.30.0",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.3",
-    "recharts": "^2.12.7"
+    "recharts": "^2.12.7",
+    "util": "^0.12.5",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:coverage": "node -r ./src/setupPolyfills.js node_modules/.bin/react-scripts test --coverage --watchAll=false",
+    "test:with-polyfills": "node -r ./src/setupPolyfills.js node_modules/.bin/react-scripts test",
+    "test:with-coverage": "node -r ./src/setupPolyfills.js node_modules/.bin/react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

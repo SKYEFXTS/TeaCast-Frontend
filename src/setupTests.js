@@ -1,19 +1,34 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// This jest.mock should be at the very top of the file, before any imports
+jest.mock('axios', () => {
+  return {
+    default: {
+      get: jest.fn(() => Promise.resolve({ data: {} })),
+      post: jest.fn(() => Promise.resolve({ data: {} })),
+      put: jest.fn(() => Promise.resolve({ data: {} })),
+      delete: jest.fn(() => Promise.resolve({ data: {} }))
+    },
+    get: jest.fn(() => Promise.resolve({ data: {} })),
+    post: jest.fn(() => Promise.resolve({ data: {} })),
+    put: jest.fn(() => Promise.resolve({ data: {} })),
+    delete: jest.fn(() => Promise.resolve({ data: {} }))
+  };
+});
+
+// Mock web-vitals for the reportWebVitals.test.js
+jest.mock('web-vitals', () => ({
+  getCLS: jest.fn(),
+  getFID: jest.fn(),
+  getFCP: jest.fn(),
+  getLCP: jest.fn(),
+  getTTFB: jest.fn()
+}));
+
 import '@testing-library/jest-dom';
 import { server } from './mocks/server';
 
-// Mock axios
-jest.mock('axios');
-
-// Establish API mocking before all tests
 beforeAll(() => server.listen());
-
-// Reset any request handlers that we may add during the tests,
-// so they don't affect other tests
 afterEach(() => {
   server.resetHandlers();
   jest.clearAllMocks();
 });
-
-// Clean up after the tests are finished
 afterAll(() => server.close());

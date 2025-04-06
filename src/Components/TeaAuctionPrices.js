@@ -31,13 +31,13 @@ import '../Assets/Styles/TeaAuctionPrices.css';
 function TeaAuctionPrices({ auctionData }) {
     return (
         // Main grid container for auction items
-        <div className="auction-grid">
+        <div className="auction-grid" data-testid="auction-grid">
             {/* Conditional rendering based on data availability */}
             {auctionData.length > 0 ? (
                 // Map through auction data to create cards
                 auctionData.map((tea, index) => (
                     // Individual auction card
-                    <div className="auction-card" key={index}>
+                    <div className="auction-card" key={index} data-testid="auction-card">
                         {/* Tea name heading */}
                         <h3>{tea.name}</h3>
                         {/* Tea details container */}
