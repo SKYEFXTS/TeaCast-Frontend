@@ -107,7 +107,7 @@ function Prediction() {
             <div className="prediction-page">
                 <Header />
                 <main className="loading-container">
-                    <div className="loading">Loading prediction data...</div>
+                    <div className="loading">Loading predictions...</div>
                 </main>
                 <Footer />
             </div>
@@ -123,7 +123,7 @@ function Prediction() {
             <div className="prediction-page">
                 <Header />
                 <main className="error-container">
-                    <div className="error-message">{error}</div>
+                    <div className="error-message">Error loading predictions: {error}</div>
                 </main>
                 <Footer />
             </div>

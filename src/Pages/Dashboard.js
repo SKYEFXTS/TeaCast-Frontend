@@ -106,7 +106,7 @@ function Dashboard() {
             <div className="dashboard-page">
                 <Header />
                 <main className="error-container">
-                    <div className="error-message">{error}</div>
+                    <div className="error-message">Error loading dashboard data: {error}</div>
                 </main>
                 <Footer />
             </div>

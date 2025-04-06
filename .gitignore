@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -7,6 +5,8 @@
 
 # testing
 /coverage
+/test-results
+test-results.txt
 
 # production
 /build
@@ -17,8 +17,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/src/Response Templates/
