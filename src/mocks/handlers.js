@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw';
 
-const apiUrl = 'http://127.0.0.1:5000';
+const apiUrl = 'http://127.0.0.1:5001';
 
 export const handlers = [
   // Mock login endpoint

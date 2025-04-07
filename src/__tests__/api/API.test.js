@@ -29,7 +29,7 @@ describe('API Service', () => {
 
       // Assertions
       expect(axios.post).toHaveBeenCalledWith(
-        'http://127.0.0.1:5000/login', 
+        'http://127.0.0.1:5001/login', 
         { username: 'testuser', password: 'password' }
       );
       expect(result).toEqual(mockResponse.data);
@@ -73,7 +73,7 @@ describe('API Service', () => {
       const result = await getPrediction();
 
       // Assertions
-      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5000/data/predict');
+      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5001/data/predict');
       expect(result).toEqual(mockPredictionData);
     });
 
@@ -123,7 +123,7 @@ describe('API Service', () => {
       const result = await getTeaAuctionPrices();
 
       // Assertions
-      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5000/data/tea-auction-price');
+      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5001/data/tea-auction-price');
       expect(result).toEqual(mockPrices);
     });
 
@@ -177,9 +177,9 @@ describe('API Service', () => {
       const result = await getDashboardData();
 
       // Assertions
-      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5000/data/dashboard');
+      expect(axios.get).toHaveBeenCalledWith('http://127.0.0.1:5001/data/dashboard');
       expect(result).toEqual(mockDashboardData);
-      expect(console.log).toHaveBeenCalledWith('Fetching dashboard data from:', 'http://127.0.0.1:5000/data/dashboard');
+      expect(console.log).toHaveBeenCalledWith('Fetching dashboard data from:', 'http://127.0.0.1:5001/data/dashboard');
     });
 
     it('should throw an error when the API call fails', async () => {

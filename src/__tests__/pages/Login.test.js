@@ -81,7 +81,7 @@ describe('Login Page Component', () => {
     await waitFor(() => {
       // Check that axios.post was called with the correct arguments
       expect(axios.post).toHaveBeenCalledWith(
-        'http://127.0.0.1:5000/login', 
+        'http://127.0.0.1:5001/login', 
         { username: 'testuser', password: 'password123' }
       );
       

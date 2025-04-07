@@ -20,7 +20,7 @@ import axios from 'axios';
    API Configuration
    Base URL for all API endpoints
    ========================================================================== */
-const apiUrl = 'http://127.0.0.1:5000';
+const apiUrl = 'http://127.0.0.1:5001';
 
 /* ==========================================================================
    Authentication Functions
