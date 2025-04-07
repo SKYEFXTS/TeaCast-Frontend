@@ -1,7 +1,28 @@
 import 'util';
-import { rest } from 'msw';
 import { server } from '../../mocks/server';
 import { handlers } from '../../mocks/handlers';
+
+// Mock MSW
+jest.mock('msw', () => {
+  return {
+    http: {
+      post: (path, resolver) => ({
+        info: { path, method: 'POST' },
+        handler: resolver
+      }),
+      get: (path, resolver) => ({
+        info: { path, method: 'GET' },
+        handler: resolver
+      })
+    },
+    HttpResponse: {
+      json: (data) => ({
+        status: 200,
+        json: async () => data
+      })
+    }
+  };
+}, { virtual: true });
 
 describe('MSW Server Setup', () => {
   it('should have the correct handlers registered', () => {
@@ -10,10 +31,10 @@ describe('MSW Server Setup', () => {
     
     // Check that the handlers include the expected endpoints
     const endpoints = handlers.map(handler => handler.info.path);
-    expect(endpoints).toContain('http://127.0.0.1:5000/login');
-    expect(endpoints).toContain('http://127.0.0.1:5000/data/predict');
-    expect(endpoints).toContain('http://127.0.0.1:5000/data/tea-auction-price');
-    expect(endpoints).toContain('http://127.0.0.1:5000/data/dashboard');
+    expect(endpoints).toContain('http://127.0.0.1:5001/login');
+    expect(endpoints).toContain('http://127.0.0.1:5001/data/predict');
+    expect(endpoints).toContain('http://127.0.0.1:5001/data/tea-auction-price');
+    expect(endpoints).toContain('http://127.0.0.1:5001/data/dashboard');
   });
   
   it('should have the server properly configured', () => {

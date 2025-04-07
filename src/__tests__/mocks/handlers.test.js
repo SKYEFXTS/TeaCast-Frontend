@@ -41,10 +41,10 @@ describe('MSW Handlers', () => {
     // Check if essential endpoints are present
     expect(endpoints).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ path: 'http://127.0.0.1:5000/login', method: 'POST' }),
-        expect.objectContaining({ path: 'http://127.0.0.1:5000/data/predict', method: 'GET' }),
-        expect.objectContaining({ path: 'http://127.0.0.1:5000/data/tea-auction-price', method: 'GET' }),
-        expect.objectContaining({ path: 'http://127.0.0.1:5000/data/dashboard', method: 'GET' })
+        expect.objectContaining({ path: 'http://127.0.0.1:5001/login', method: 'POST' }),
+        expect.objectContaining({ path: 'http://127.0.0.1:5001/data/predict', method: 'GET' }),
+        expect.objectContaining({ path: 'http://127.0.0.1:5001/data/tea-auction-price', method: 'GET' }),
+        expect.objectContaining({ path: 'http://127.0.0.1:5001/data/dashboard', method: 'GET' })
       ])
     );
   });
