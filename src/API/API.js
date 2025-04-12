@@ -20,7 +20,32 @@ import axios from 'axios';
    API Configuration
    Base URL for all API endpoints
    ========================================================================== */
-const apiUrl = 'http://127.0.0.1:5001';
+// Use environment variables for API URL with fallback to local development
+const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5001';
+const isDevelopment = process.env.REACT_APP_ENV === 'development';
+
+// Safe console logging function that only logs in development
+const safeLog = (message, data) => {
+  if (isDevelopment) {
+    console.log(message, data);
+  }
+};
+
+// Safe warning function that only logs in development
+const safeWarn = (message, data) => {
+  if (isDevelopment) {
+    console.warn(message, data);
+  }
+};
+
+// Safe error logging that retains errors in production but without sensitive data
+const safeError = (message, error) => {
+  if (isDevelopment) {
+    console.error(message, error);
+  } else {
+    console.error(message);
+  }
+};
 
 /* ==========================================================================
    Authentication Functions
@@ -53,9 +78,9 @@ export const loginUser = async (username, password) => {
  */
 export const getPrediction = async () => {
     try {
-        console.log('Fetching predictions from:', `${apiUrl}/data/predict`);
+        safeLog('Fetching predictions from:', `${apiUrl}/data/predict`);
         const response = await axios.get(`${apiUrl}/data/predict`);
-        console.log('Prediction API Response:', response);
+        safeLog('Prediction API Response:', response);
         
         if (response.data && response.data.prediction !== undefined) {
             // If prediction is null, return null (valid case with no data)
@@ -64,11 +89,11 @@ export const getPrediction = async () => {
             }
             return response.data.prediction;
         } else {
-            console.warn('Unexpected API response structure:', response.data);
+            safeWarn('Unexpected API response structure:', response.data);
             throw new Error('Invalid API response format');
         }
     } catch (error) {
-        console.error("Error fetching predictions:", error);
+        safeError("Error fetching predictions:", error);
         throw error;
     }
 };
@@ -82,7 +107,7 @@ export const getTeaAuctionPrices = async () => {
         const response = await axios.get(`${apiUrl}/data/tea-auction-price`);
         return response.data.average_prices;
     } catch (error) {
-        console.error("Error fetching tea auction prices:", error);
+        safeError("Error fetching tea auction prices:", error);
         return [];
     }
 };
@@ -93,12 +118,12 @@ export const getTeaAuctionPrices = async () => {
  */
 export const getDashboardData = async () => {
     try {
-        console.log('Fetching dashboard data from:', `${apiUrl}/data/dashboard`);
+        safeLog('Fetching dashboard data from:', `${apiUrl}/data/dashboard`);
         const response = await axios.get(`${apiUrl}/data/dashboard`);
-        console.log('Dashboard API Response:', response);
+        safeLog('Dashboard API Response:', response);
         return response.data;
     } catch (error) {
-        console.error("Error fetching dashboard data:", error);
+        safeError("Error fetching dashboard data:", error);
         throw error;
     }
 };

@@ -72,6 +72,41 @@ The build is optimized for the best performance.
 
 Removes the single build dependency from your project and copies all configuration files and dependencies into your project.
 
+## Deployment
+
+### Deploying to Netlify
+
+TeaCast is configured for easy deployment on Netlify. Follow these steps:
+
+1. **Connect to Netlify**: 
+   - Go to [Netlify](https://www.netlify.com/) and sign in
+   - Click "New site from Git"
+   - Choose your Git provider and select the TeaCast repository
+
+2. **Configure Build Settings**:
+   - Build command: `npm run netlify-build`
+   - Publish directory: `build`
+
+3. **Set Environment Variables**:
+   - Go to Site settings > Build & deploy > Environment
+   - Add the following environment variable:
+     - Key: `REACT_APP_API_URL`
+     - Value: Your production API URL (e.g., `https://teacast-api.yourdomain.com`)
+
+4. **Deploy**:
+   - Click "Deploy site"
+   - Netlify will build and deploy your application
+
+### Custom Domain (Optional)
+
+1. Go to Site settings > Domain management
+2. Click "Add custom domain"
+3. Follow the instructions to configure your domain
+
+### Continuous Deployment
+
+Any changes pushed to the `deployment` branch will automatically trigger a new build and deployment on Netlify.
+
 ## Project Structure
 
 ```
@@ -96,7 +131,9 @@ teacast/
 │   │   └── TeaAuctionPrices.js
 │   └── App.js
 └── package.json
-```## Contributing
+```
+
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)

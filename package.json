@@ -24,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "netlify-build": "node netlify-build.js",
     "test": "react-scripts test",
     "test:coverage": "node -r ./src/setupPolyfills.js node_modules/.bin/react-scripts test --coverage --watchAll=false",
     "test:with-polyfills": "node -r ./src/setupPolyfills.js node_modules/.bin/react-scripts test",

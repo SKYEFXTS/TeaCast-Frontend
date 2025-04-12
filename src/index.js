@@ -4,6 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Only initialize MSW in development mode
+async function initializeMSWIfNeeded() {
+  if (process.env.NODE_ENV === 'development') {
+    try {
+      const { worker } = await import('./mocks/server');
+      worker.start({ onUnhandledRequest: 'bypass' });
+      console.log('Mock Service Worker started for development');
+    } catch (error) {
+      console.error('Error starting Mock Service Worker:', error);
+    }
+  }
+}
+
+// Initialize MSW conditionally
+initializeMSWIfNeeded();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
